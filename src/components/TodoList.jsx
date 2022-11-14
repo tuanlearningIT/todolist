@@ -2,15 +2,12 @@ import React, { useState } from "react";
 import Todo from "./Todo";
 
 const TodoList = ({ todoList, handleDelete, handleCheckbox, setTodoList }) => {
-  const [isEdit, setIsEdit] = useState(false);
   const todo = {};
   const [todoEdit, setTodoEdit] = useState(todo);
   let { title, description, dueDate, piority, complete } = todoEdit;
   //const [listSearch, setListSearch] = useState(todoList);
   const [inputSearch, setInputSearch] = useState("");
-  const handleIsEdit = (id) => {
-    setIsEdit(!isEdit);
-  };
+
   const listSearch = todoList.filter((todo) => {
     return todo.title.toLowerCase().indexOf(inputSearch.toLowerCase()) !== -1;
   });
@@ -45,8 +42,6 @@ const TodoList = ({ todoList, handleDelete, handleCheckbox, setTodoList }) => {
                 id={todo.id}
                 key={todo.id}
                 todo={todo}
-                handleIsEdit={handleIsEdit}
-                isEdit={isEdit}
                 handleDelete={handleDelete}
                 handleCheckbox={handleCheckbox}
                 setTodoList={setTodoList}

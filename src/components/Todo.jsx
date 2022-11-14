@@ -1,16 +1,11 @@
 import React, { useState } from "react";
 
-const Todo = ({
-  todo,
-  handleIsEdit,
-  isEdit,
-  id,
-  handleDelete,
-
-  handleCheckbox,
-  setTodoList,
-}) => {
+const Todo = ({ todo, handleDelete, handleCheckbox, setTodoList }) => {
   const [todoEdit, setTodoEdit] = useState(todo);
+  const [isEdit, setIsEdit] = useState(false);
+  const handleIsEdit = (id) => {
+    setIsEdit(!isEdit);
+  };
   let { title, description, dueDate, piority, complete } = todoEdit;
   const handleOnChangeEdit = (e) => {
     setTodoEdit({ ...todoEdit, [e.target.name]: e.target.value });

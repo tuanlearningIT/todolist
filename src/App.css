@@ -25,9 +25,8 @@
   gap: 30px;
 }
 .todo-list-top {
-  border: 1px solid black;
   margin: 40px 50px;
-  padding: 40px 50px;
+  padding: 0 50px 54px 50px;
   display: flex;
   flex-direction: column;
   gap: 30px;
