@@ -6,7 +6,7 @@ const Todo = ({ todo, handleDelete, handleCheckbox, setTodoList }) => {
   const handleIsEdit = (id) => {
     setIsEdit(!isEdit);
   };
-  let { title, description, dueDate, piority, complete } = todoEdit;
+  let { title, description, dueDate, piority } = todoEdit;
   const handleOnChangeEdit = (e) => {
     setTodoEdit({ ...todoEdit, [e.target.name]: e.target.value });
   };
@@ -19,7 +19,6 @@ const Todo = ({ todo, handleDelete, handleCheckbox, setTodoList }) => {
               description: description,
               dueDate: dueDate,
               piority: piority,
-              complete: complete,
             }
           : todo
       )
